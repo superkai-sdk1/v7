@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Панель</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <header>
+        <table style="width: 100%;">
+            <tr>
+                <td nowrap>
+                    <label class="input-file">
+                        <input type="file" name="file" id="fileToLoad" accept=".txt" onchange="loadFileAsText()">
+                        <span class="input-file-btn">Выберите файл</span>
+                        <span class="input-file-text">Укажите файл со списком игроков</span>
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;" id="main-buttons">
+            <tr>
+                <td>Показывать панель игроков</td>
+                <td style="width: 80px">
+                    <div class="button r button-1" id="button-panel">
+                        <input type="checkbox" class="checkbox" checked>
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Номер игры</td>
+                <td>
+                    <input type="text" id="game-number-input" placeholder="ИГРА x / y">
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div class="main">
+        <table class="player-table">
+            <tr style="background-color: rgb(31,30,31);">
+                <td>№</td>
+                <td>Никнейм</td>
+                <td colspan="3">Статус</td>
+                <td></td>
+                <td colspan="3">Роль</td>
+            </tr>
+            <tbody id="player-rows"></tbody>
+            <tr>
+                <td></td>
+                <td class="players"><button onclick="sendAllData()">Отправить</button></td>
+                <td colspan="3"><button onclick="clearStatus()">Сбросить</button></td>
+                <td></td>
+                <td colspan="3"><button onclick="clearRole()">Сбросить</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

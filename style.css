@@ -1,0 +1,327 @@
+﻿body {
+    background-color: rgb(58, 57, 58);
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+}
+
+.player-table {
+    width: 100%;
+    border-spacing: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.number {
+    width: 28px;
+}
+
+    .number p {
+        margin: 0;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        background-color: rgb(76, 76, 76);
+        border-radius: 50%;
+        line-height: 24px;
+        cursor: pointer;
+    }
+
+.players {
+    width: 100%;
+    padding: 2px;
+}
+
+#game_number {
+    padding: 0 5px;
+    height: 27px;
+    width: 87%;
+    background: #4c4c4c;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+}
+
+.player-list {
+    padding: 0 5px;
+    height: 27px;
+    width: 100%;
+    background: #4c4c4c;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+}
+
+.s-button {
+    background-color: rgb(76, 76, 76);
+    width: 24px;
+    height: 24px;
+    padding: 0 5px;
+    border-bottom: 2px rgb(58, 57, 58) solid;
+    border-top: 2px rgb(58, 57, 58) solid;
+}
+
+    .s-button div {
+        height: 24px;
+        width: 24px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        border-radius: 50%;
+        background-color: rgba(213, 213, 213, 0.9);
+        cursor: pointer;
+    }
+
+    .s-button.killed-button div {
+        background-image: url("content/icon/killed.png");
+    }
+
+    .s-button.voted-button div {
+        background-image: url("content/icon/voted.png");
+    }
+
+    .s-button.deleted-button div {
+        background-image: url("content/icon/deleted.png");
+    }
+
+    .s-button.don-button div {
+        background-image: url("content/icon/don.png");
+    }
+
+    .s-button.mafia-button div {
+        background-image: url("content/icon/mafia.png");
+    }
+
+    .s-button.sheriff-button div {
+        background-image: url("content/icon/sheriff.png");
+    }
+
+.killed .s-button.killed-button div,
+.voted .s-button.voted-button div,
+.deleted .s-button.deleted-button div,
+.don .s-button.don-button div,
+.mafia .s-button.mafia-button div,
+.sheriff .s-button.sheriff-button div {
+    background-color: rgba(250, 170, 0, 1);
+}
+
+.highlight {
+    border: 4px solid transparent;
+    border-radius: 10px;
+    animation: highlight-animation 3s linear infinite;
+}
+
+@keyframes highlight-animation {
+    0% {
+        border-color: rgba(175, 82, 222, 0);
+    }
+
+    25% {
+        border-color: rgba(175, 82, 222, 0.5);
+    }
+
+    50% {
+        border-color: rgba(175, 82, 222, 1);
+    }
+
+    75% {
+        border-color: rgba(175, 82, 222, 0.5);
+    }
+
+    100% {
+        border-color: rgba(175, 82, 222, 0);
+    }
+}
+
+button {
+    margin: 5px 0;
+    height: 24px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+    background-color: rgb(31, 30, 31);
+    white-space: nowrap;
+}
+
+    button,
+    button:active,
+    button:focus {
+        outline: none;
+    }
+
+.binding button:active,
+.binding button:focus {
+    background-color: rgba(250, 170, 0, 1);
+}
+
+input[type="number"],
+textarea {
+    border: none;
+    outline: none;
+    background: #4c4c4c;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+    text-align: center;
+    width: 70px;
+    height: 24px;
+    padding: 0;
+}
+
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    top: 50%;
+    width: 70px;
+    height: 24px;
+    overflow: hidden;
+    padding: 3px 0;
+}
+
+    .button.r,
+    .button.r .layer {
+        border-radius: 24px;
+    }
+
+    .button.b2 {
+        border-radius: 2px;
+    }
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background: #4c4c4c;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.button-1 .knobs:before {
+    content: 'Нет';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    color: rgb(213, 213, 213);
+    text-align: center;
+    padding: 5px 0;
+    background-color: rgb(31, 30, 31);
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+.button-1 .checkbox:checked + .knobs:before {
+    content: 'Да';
+    left: 43px;
+    background-color: rgba(250, 170, 0, 1);
+    color: rgb(31, 30, 31);
+}
+
+.button-1 .checkbox:checked ~ .layer {
+    background-color: #fcfceb;
+}
+
+.button-1 .knobs,
+.button-1 .knobs:before,
+.button-1 .layer {
+    transition: 0.3s ease all;
+}
+
+.input-file {
+    position: relative;
+    display: inline-block;
+}
+
+.input-file-btn {
+    font-family: 'Manrope', sans-serif;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgb(31, 30, 31);
+    height: 24px;
+    font-size: 14px;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+
+.input-file-text {
+    font-family: 'Manrope', sans-serif;
+    vertical-align: middle;
+}
+
+.input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+    .input-file input[type=file]:focus + .input-file-btn {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    }
+
+.input-file:hover .input-file-btn {
+    background-color: rgb(31, 30, 31);
+}
+
+.input-file:active .input-file-btn {
+    background-color: rgb(31, 30, 31);
+}
+
+.input-file input[type=file]:disabled + .input-file-btn {
+    background-color: #eee;
+}
+
+#game-number-input {
+    width: 150px;
+    padding: 5px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgb(213, 213, 213);
+    background: rgb(76, 76, 76);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
